@@ -3,7 +3,10 @@ export default function KCCSWebsite() {
     <div className="bg-gradient-to-br from-blue-100 to-white min-h-screen text-gray-800">
       {/* Frosted Navbar */}
       <nav className="backdrop-blur-md bg-white/30 sticky top-0 z-50 shadow-md p-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Kabul Central Cold Storage AFG</h1>
+        <div className="flex items-center space-x-3">
+          <img src="/logo.png" alt="KCCS Logo" className="h-10 w-auto" />
+          <h1 className="text-2xl font-bold">Kabul Central Cold Storage</h1>
+        </div>
         <div className="space-x-6">
           <a href="#about" className="hover:underline">About</a>
           <a href="#services" className="hover:underline">Services</a>
