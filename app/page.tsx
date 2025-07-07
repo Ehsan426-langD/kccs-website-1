@@ -36,12 +36,12 @@ export default function KCCSWebsite() {
       email: "Email: info@kccs.af"
     },
     ps: {
-      company: "د کابل مرکزي یخچال",
+      company: "د کابل مرکزي سړخونه",
       about: "زموږ په اړه",
       services: "خدمات",
       contact: "اړیکه",
       heroTitle: "تازه والی وساتئ",
-      heroDesc: "په کابل کې عصري یخچالي خدمات",
+      heroDesc: "په کابل کې عصري سړخونې خدمات",
       requestStorage: "د یخچال غوښتنه",
       contactUs: "اړیکه ونیسئ",
       aboutTitle: "زموږ په اړه",
@@ -104,15 +104,15 @@ export default function KCCSWebsite() {
   return (
     <div className="bg-gradient-to-br from-blue-100 to-white min-h-screen text-gray-800">
       {/* Navbar */}
-      <nav className="backdrop-blur-md bg-white/30 sticky top-0 z-50 shadow-md p-4 flex justify-between items-center">
+      <nav className="backdrop-blur-md bg-white/30 sticky top-0 z-50 shadow-md p-4 flex justify-between items-center animate-fade-in">
         <div className="flex items-center space-x-3">
           <img src="/logo.png" alt="KCCS Logo" className="h-10 w-auto" onError={(e) => (e.currentTarget.style.display = 'none')} />
-          <h1 className="text-2xl font-bold">{t.company}</h1>
+          <h1 className="text-2xl font-bold hover:text-blue-700 transition-colors duration-300">{t.company}</h1>
         </div>
         <div className="flex items-center space-x-6">
-          <a href="#about" className="hover:underline">{t.about}</a>
-          <a href="#services" className="hover:underline">{t.services}</a>
-          <a href="#contact" className="hover:underline">{t.contact}</a>
+          <a href="#about" className="hover:text-blue-700 transition-colors duration-300">{t.about}</a>
+          <a href="#services" className="hover:text-blue-700 transition-colors duration-300">{t.services}</a>
+          <a href="#contact" className="hover:text-blue-700 transition-colors duration-300">{t.contact}</a>
           <select value={lang} onChange={(e) => setLang(e.target.value)} className="bg-white/70 backdrop-blur p-1 rounded">
             <option value="en">EN</option>
             <option value="fa">FA</option>
@@ -122,30 +122,30 @@ export default function KCCSWebsite() {
       </nav>
 
       {/* Hero */}
-      <section className="bg-[url('/cold-storage.jpg')] bg-cover bg-center text-white h-[90vh] flex flex-col items-center justify-center text-center px-4 relative">
+      <section className="bg-[url('/cold-storage.jpg')] bg-cover bg-center text-white h-[90vh] flex flex-col items-center justify-center text-center px-4 relative animate-fade-in">
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
         <div className="relative z-10">
-          <h2 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg">{t.heroTitle}</h2>
-          <p className="text-xl mt-4">{t.heroDesc}</p>
+          <h2 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg animate-slide-up">{t.heroTitle}</h2>
+          <p className="text-xl mt-4 animate-fade-in delay-200">{t.heroDesc}</p>
           <div className="mt-6 space-x-4">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded">{t.requestStorage}</button>
-            <button className="border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-blue-600">{t.contactUs}</button>
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-transform hover:scale-105">{t.requestStorage}</button>
+            <button className="border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-blue-600 transition-transform hover:scale-105">{t.contactUs}</button>
           </div>
         </div>
       </section>
 
       {/* About */}
-      <section id="about" className="py-16 px-6 md:px-24 bg-white/70 backdrop-blur-md">
-        <h3 className="text-3xl font-semibold mb-6">{t.aboutTitle}</h3>
+      <section id="about" className="py-16 px-6 md:px-24 bg-white/70 backdrop-blur-md animate-fade-in">
+        <h3 className="text-3xl font-semibold mb-6 hover:text-blue-700 transition-colors duration-300">{t.aboutTitle}</h3>
         <p>{t.aboutText}</p>
       </section>
 
       {/* Services */}
-      <section id="services" className="py-16 px-6 md:px-24">
-        <h3 className="text-3xl font-semibold mb-10 text-center">{t.servicesTitle}</h3>
+      <section id="services" className="py-16 px-6 md:px-24 animate-fade-in">
+        <h3 className="text-3xl font-semibold mb-10 text-center hover:text-blue-700 transition-colors duration-300">{t.servicesTitle}</h3>
         <div className="grid md:grid-cols-3 gap-6">
           {t.serviceList.map((service, idx) => (
-            <div key={idx} className="rounded shadow bg-white/60 p-6 text-center font-medium">
+            <div key={idx} className="rounded shadow bg-white/60 p-6 text-center font-medium hover:shadow-xl transition-shadow duration-300">
               {service}
             </div>
           ))}
@@ -153,28 +153,28 @@ export default function KCCSWebsite() {
       </section>
 
       {/* Gallery */}
-      <section className="py-16 px-6 md:px-24 bg-white/80">
-        <h3 className="text-3xl font-semibold mb-10 text-center">Gallery</h3>
+      <section className="py-16 px-6 md:px-24 bg-white/80 animate-fade-in">
+        <h3 className="text-3xl font-semibold mb-10 text-center hover:text-blue-700 transition-colors duration-300">Gallery</h3>
         <div className="grid md:grid-cols-3 gap-6">
           {galleryImages.map((img, index) => (
             <img
               key={index}
               src={img.src}
               alt={img.alt}
-              className="rounded shadow object-cover w-full h-60"
+              className="rounded shadow object-cover w-full h-60 hover:scale-105 transition-transform duration-300"
             />
           ))}
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-16 px-6 md:px-24 bg-blue-50">
-        <h3 className="text-3xl font-semibold mb-6 text-center">{t.contactTitle}</h3>
+      <section id="contact" className="py-16 px-6 md:px-24 bg-blue-50 animate-fade-in">
+        <h3 className="text-3xl font-semibold mb-6 text-center hover:text-blue-700 transition-colors duration-300">{t.contactTitle}</h3>
         <form className="max-w-xl mx-auto space-y-4">
-          <input type="text" className="border p-3 w-full rounded" placeholder={t.namePlaceholder} />
-          <input type="email" className="border p-3 w-full rounded" placeholder={t.emailPlaceholder} />
-          <textarea className="border p-3 w-full rounded" placeholder={t.messagePlaceholder}></textarea>
-          <button type="submit" className="w-full bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700">{t.sendButton}</button>
+          <input type="text" className="border p-3 w-full rounded focus:outline-blue-400" placeholder={t.namePlaceholder} />
+          <input type="email" className="border p-3 w-full rounded focus:outline-blue-400" placeholder={t.emailPlaceholder} />
+          <textarea className="border p-3 w-full rounded focus:outline-blue-400" placeholder={t.messagePlaceholder}></textarea>
+          <button type="submit" className="w-full bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 transition-transform hover:scale-105">{t.sendButton}</button>
         </form>
         <div className="text-center mt-6">
           <p>{t.phone}</p>
@@ -183,8 +183,8 @@ export default function KCCSWebsite() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center text-sm py-4 text-gray-600 bg-white/40 backdrop-blur-md">
-        © {new Date().getFullYear()} {t.company}. All rights reserved.
+      <footer className="text-center text-sm py-4 text-gray-600 bg-white/40 backdrop-blur-md animate-fade-in">
+        © {new Date().getFullYear()} Kabul Central Cold Storage. All rights reserved.
       </footer>
     </div>
   );
