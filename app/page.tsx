@@ -98,7 +98,7 @@ export default function KCCSWebsite() {
 
   const t = translations[lang];
   const galleryImages = [1, 2, 3, 4, 5, 6].map((n) => ({
-    src: `/gallery/image${n}.jpg`,
+    src: `/gallery/image${n}.jpeg`,
     alt: `Gallery ${n}`
   }));
 
@@ -123,7 +123,7 @@ export default function KCCSWebsite() {
       </nav>
 
       {/* Hero */}
-      <section className="bg-[url('/cold-storage.jpg')] bg-cover bg-center text-white h-[90vh] flex flex-col items-center justify-center text-center px-4 relative animate-fade-in">
+      <section className="bg-[url('/cold-storage.jpeg')] bg-cover bg-center text-white h-[90vh] flex flex-col items-center justify-center text-center px-4 relative animate-fade-in">
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
         <div className="relative z-10">
           <h2 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg animate-slide-up">{t.heroTitle}</h2>
