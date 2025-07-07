@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+type Language = "en" | "fa" | "ps";
 
 export default function KCCSWebsite() {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState<Language>("en");
 
   const translations = {
     en: {
@@ -113,7 +114,7 @@ export default function KCCSWebsite() {
           <a href="#about" className="hover:text-blue-700 transition-colors duration-300">{t.about}</a>
           <a href="#services" className="hover:text-blue-700 transition-colors duration-300">{t.services}</a>
           <a href="#contact" className="hover:text-blue-700 transition-colors duration-300">{t.contact}</a>
-          <select value={lang} onChange={(e) => setLang(e.target.value)} className="bg-white/70 backdrop-blur p-1 rounded">
+          <select value={lang} onChange={(e) => setLang(e.target.value as Language)} className="bg-white/70 backdrop-blur p-1 rounded">
             <option value="en">EN</option>
             <option value="fa">FA</option>
             <option value="ps">PS</option>
